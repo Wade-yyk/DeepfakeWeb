@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+section.module {
+    display: none; /* Hide all sections by default */
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label,
+form input,
+form textarea {
+    margin-bottom: 1rem;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+
+/*1*/
+.video-container video {
+    width: 640px;
+    height: 360px;
+}
+
+.text-block {
+    margin-bottom: 20px;
+}
+
+
+/*2*/
+hr {
+    border: none;      
+    height: 2px;    
+    background-color: #ccc;  
+    margin: 20px 0;   
+  }
+
+
+
+
+
+/*3*/
+
+.upload-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#uploaded-images-container .uploaded-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#uploaded-images-container img {
+    max-width: 500px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.button-container, 
+#uploaded-images-container .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #2b93d4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1a6c94;
+}
+
+.progress-bar-container {
+    width: 100%;
+    max-width: 500px;
+    height: 20px;
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #2b93d4;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#uploaded-images-container .percentage-label {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
