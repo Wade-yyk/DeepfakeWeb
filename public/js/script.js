@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Show default module (e.g., Introduction)
     showModule('introduction');
-    // Initialize Community Forum functionalities
     setupCommunityForum();
-    // Load and display images with voting controls from the server
     loadUploadedImages();
   });
   
@@ -146,4 +143,77 @@ document.addEventListener('DOMContentLoaded', function() {
       sendVote('option2');
     });
   }
+  
+  const flashcardData = [
+    {
+      question: "You receive a voice call that sounds exactly like your boss, urgently asking you to transfer company funds. You later find out your boss never made the call. What’s really going on?",
+      answer: "This is likely a deepfake voice scam. Scammers can use AI to clone voices and manipulate people using realistic audio impersonations, especially in high-pressure situations where trust is exploited."
+    },
+    {
+      question: "A high school student is being bullied after a video surfaces showing them making offensive remarks—but they insist they never said those things. What might explain this?",
+      answer: "A deepfake video could have been used to fabricate the remarks. This shows how deepfake tools can be misused for bullying and defamation, even by other children, due to how accessible the technology has become."
+    },
+    {
+      question: "An elderly person buys an expensive “miracle cure” after seeing a convincing video ad featuring a trusted celebrity. Later, they learn the product is fake. What made the scam so effective?",
+      answer: "Deepfake video or voice was likely used to falsely show the celebrity endorsing the product. Combined with targeting vulnerable people online, this makes scams feel trustworthy and believable."
+    },
+    {
+      question: "A woman discovers sexually explicit videos of herself circulating online, even though she never made them. What kind of harm is this—and how does AI play a role?",
+      answer: "This is a case of non-consensual deepfake content, where AI is used to superimpose someone’s face onto explicit material. It’s a serious violation of privacy and dignity, often leading to emotional and reputational damage."
+    },
+    {
+      question: "You connect with someone on a dating app who shares photos and short videos of themselves, but always avoids live video calls. They eventually ask you for money. What red flags should you consider?",
+      answer: "This could be a deepfake-based romance scam. AI-generated faces and videos can now simulate real people, making emotional manipulation easier in catfishing situations."
+    },{
+      question: "If you find yourself under deepfake technology harassment, what should you do? What if your family member, friend, or classmate is a victim—how would you support them?",
+      answer: "Report the content to the platform immediately and document everything. Offer emotional support to the victim and help them report the incident to trusted adults, school staff, or authorities. Remind them it’s not their fault and they don’t have to face it alone."
+    },{
+      question: "What steps can schools and universities take to educate students about deepfakes and digital safety?",
+      answer: "They can integrate lessons on digital literacy, teach how to verify sources, host workshops on AI ethics, and provide support systems for students affected by digital harassment."
+    },{
+      question: "Imagine someone says, “It’s just a joke!” after sharing a deepfake video of a friend. Why is this mindset harmful?",
+      answer: "It downplays the serious emotional and social impact deepfake misuse can have. What seems like a “joke” can lead to bullying, reputational damage, or trauma, especially if the video spreads beyond the original group."
+    },{
+      question: "Why is it important to include diverse voices and age groups in conversations about deepfakes and AI abuse?",
+      answer: "Because people are affected differently. Elders, teens, parents, and workers all face unique risks—and including their perspectives helps build more effective awareness, support, and protection systems."
+    },{
+      question: "What kind of future do we risk if we ignore the dangers of deepfake technology?",
+      answer: "A world where truth becomes harder to recognize, trust erodes between people, and vulnerable individuals face increasing harm from invisible attackers. Awareness and action now can help prevent that."
+    }
+  ];
+  
+  function createFlashcards() {
+    const container = document.getElementById('flashcards-container');
+    flashcardData.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'flashcard';
+      card.dataset.index = index;
+  
+      const content = document.createElement('div');
+      content.className = 'card-content question';
+      content.textContent = item.question;
+  
+      card.appendChild(content);
+      card.addEventListener('click', () => flipCard(card));
+      container.appendChild(card);
+    });
+  }
+  
+  function flipCard(card) {
+    const index = card.dataset.index;
+    const content = card.querySelector('.card-content');
+    const data = flashcardData[index];
+  
+    if (content.classList.contains('question')) {
+      content.textContent = data.answer;
+      content.classList.remove('question');
+      content.classList.add('answer');
+    } else {
+      content.textContent = data.question;
+      content.classList.remove('answer');
+      content.classList.add('question');
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', createFlashcards);
   

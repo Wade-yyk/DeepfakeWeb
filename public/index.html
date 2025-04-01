@@ -14,8 +14,8 @@
                 <li><a href="#" onclick="showModule('introduction')">Introduction</a></li>
                 <li><a href="#" onclick="showModule('case-studies')">Case Studies</a></li>
                 <li><a href="#" onclick="showModule('community-forum')">Community Forum</a></li>
-                <li><a href="#" onclick="showModule('quiz-game')">Quiz/Game</a></li>
-                <li><a href="#" onclick="showModule('victim-guide')">Victim Support</a></li>
+                <li><a href="#" onclick="showModule('flashcard-quiz')">Flashcard Quiz</a></li>
+                <li><a href="#" onclick="showModule('Real-World-Discussion')">Real World Discussion</a></li>
                 <li><a href="#" onclick="showModule('about')">About & Contact</a></li>
             </ul>
         </nav>
@@ -25,7 +25,7 @@
         <!-- Introduction Module -->
         <section id="introduction" class="module">
             <h2>Overview and Origin:</h2>
-            <p class="text-block"> Traditionally, deepfake refers to an image or recording that has been convincingly altered and manipulated to misrepresent someone as doing or saying something that was not actually done or said. [1] Nowadays, with the rapid development of artificial intelligence, deepfake technology can create new images and videos that never existed.</p>
+            <p class="text-block"> Traditionally, deepfake refers to an image or recording that has been convincingly altered and manipulated to misrepresent someone as doing or saying something that was not actually done or said. Nowadays, with the rapid development of artificial intelligence, deepfake technology can create new images and videos that never existed.</p>
 
             <h2> Societal Impact: </h2>
             <p class="text-block">  The societal impact of AI deepfake technology is deeply concerning. Deepfakes can be used to create false information that damages the identity and reputation of individuals, often leading to serious consequences. For those without strong technical knowledge, these fabricated videos or images can appear convincingly real, making them easy targets for deception. This can result in devastating outcomes. I have heard that criminals produce fake videos to convince elderly people that their grandchildren have been kidnapped, or that scammers generate fake websites and travel photos to pose as a legitimate travel agency. These are clear examples of illegal misuse of the technology with harmful societal effects. Even more troubling is the issue of privacy and human rights violations. The creation of deepfakes often relies on training data composed of real photos of the people being impersonated, raising serious concerns about portrait rights and consent. Overall, while the technology itself is powerful, its unethical use poses significant risks to individuals and society as a whole.</p>
@@ -126,37 +126,94 @@
 
 
         <!-- Quiz/Game Module -->
-        <section id="quiz-game" class="module" style="display:none;">
-            <h2>Deepfake Detection Quiz</h2>
-            <p>Try to spot real vs. fake media in this interactive quiz. Test your skills and learn more about deepfake technology.</p>
-            <button onclick="alert('Feature under development')">Start Quiz</button>
-        </section>
+        <section id="flashcard-quiz" class="module" style="display:none;">
+            <h2>Deepfake Detection Flashcard</h2>
+            <h3>All the questions and answers are just insights from the developer, feel free to share your perspective with us! ❤️❤️❤️</h3>
+            <div id="flashcards-container"></div>
+          </section>
 
         <!-- Victim Support Guide Module -->
-        <section id="victim-guide" class="module" style="display:none;">
-            <h2>Victim Support Guide</h2>
-            <p>If you’re a victim of deepfake harassment, here’s what you should do.</p>
-            <ul>
-                <li>Report the incident to the authorities.</li>
-                <li>Consult with a legal expert.</li>
-                <li>Contact support organizations.</li>
+        <section id="Real-World-Discussion" class="module" style="display:none;">
+            <h1>🛑 The Real-World Harm of Deepfake Technology</h1>
+            <p>Deepfakes aren't just a tech buzzword—they can cause serious damage to real people in everyday life. While celebrity cases grab headlines, the truth is that anyone can be a victim, especially people with little awareness of AI or technology.</p>
+                <p class="text-block">Below are realistic examples and cases that we think should take serious consideration on how deepfakes can affect vulnerable groups like elders, children, and ordinary internet users.
+                </p>
+            <h2>🧓 Scams Targeting the Elderly</h2>
+            <p><em>📞 “It sounded just like my grandson… I sent them $5,000.” </em></p>
+            <p>There have been real cases where elderly people were tricked into thinking their grandchild was kidnapped or in trouble—simply because the voice on the phone “sounded just like them.” Some were manipulated into wiring large sums of money, thinking they were helping family. I personally have the experience of an elder member in my family believing in a health product whose certificates, credentials, and endorsement from experts were all deepfaked. Normally, elderly people have little to no technological background, especially those who live in rural areas, mountains, and places that are not connected with the outside world. This makes them vulnerable targets for these scams.</p>
+            <p>Insights:</p>
+            <ul style="margin-left: 40px;">
+                <li>AI voices used in phone scams</li>
+                <li>Fake shopping sites with deepfaked reviews or celebrity endorsements</li>
+                <li>Loss of money, trust, and emotional harm</li>
             </ul>
+            <hr>
+            <h2>🧒 Kids Misusing Deepfakes</h2>
+            <p><em>😢 “Someone posted a video of me saying something I never said.”</em></p>
+            <p>Deepfake tools are too accessible, and you do not need to be a Neural Network expert to generate stuff using AI. The next generation got exposed to technology way earlier than our generation. I have seen kids still in baby strollers holding an iPad when going to a restaurant. Because of the early exposure and easy access, some young people may use it to bully classmates, spread fake rumors, or embarrass others online. Imagine a child’s face being placed in a fake video or image and shared around school or social media. It can deeply affect their mental health and social relationships. Worse, they may not even understand the harm they’re causing—because it feels like a joke, but the impact is very real.</p>
+            <p>Insights:</p>
+            <ul style="margin-left: 40px;">
+                <li>Used for bullying, harassment, and “jokes”</li>
+                <li>Can damage friendships, reputations, and mental health</li>
+                <li>Children may not understand the seriousness of what they're doing</li>
+            </ul>
+            <hr>
+            <h1>The bigger picture on ordinary people</h1>
+            <p>Although elders and kids are vulnerable victims, ordinary people are also targets. Nowadays, technology has allowed scammers to customize their scams for you based on your information. They can get their hands on the immense amount of your data collected by applications and websites. When you agree to those terms and conditions, there is a risk that your data has been collected. We are not focusing on data privacy, but based on these data, scammers can make their case most expertly and realistically. For example, the scammers know you are working at a certain company and you are working on some project. The scammers can then pretend to be your colleague, group leader, or even your boss. They can ask for money, threaten you, or instruct you to do something that can be both harmful to you and your company.</p>
+            <p>Reflecting on my own experience, I, as an international student, got scammed years ago. The scammers claimed to be a customs officer and said a package of mine had been detained at customs due to something, and asked me for my ID and personal information. They made the case so real that the address mentioned was a real address to me, and the courier company was the one I used most often. So, as someone who has a technological background and anti-fraud awareness (I thought), I became a victim.</p>
+            <hr>
+            <h1>✅ What Can We Do?</h1>
+            <ul style="margin-left: 40px;">
+                <li>Learn how deepfakes work and how to spot them</li>
+                <li>Talk to vulnerable people (elders, kids) about the risks</li>
+                <li>Report fake content when you see it</li>
+                <li>Support policies and platforms that fight deepfake abuse</li>
+            </ul>
+            <hr>
+            <p class="center-bold-box">
+                Deepfake abuse is not just a tech issue—it’s a human issue. The more we talk about it, the more we protect each other.
+            </p>
         </section>
 
         <!-- About & Contact Module -->
         <section id="about" class="module" style="display:none;">
-            <h2>About & Contact</h2>
-            <p>We are dedicated to raising awareness about the dangers of deepfakes and their potential impact on society. Our team consists of researchers and advocates aiming to empower the public to identify and protect themselves from deepfake content.</p>
-            <form action="#" method="POST">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+            <h2>About the Developers</h2>
+          
+            <div class="developer-info">
+              <div class="developer">
+                <h3>Ke (Wade) Yang</h3>
+                <p>4th-year Computer Science student with a focus on AI & Vision. Responsible for front-end design, interactive modules, and brain-storming ideas.</p>
+              </div>
+          
+              <div class="developer">
+                <h3>Shuhao (Hilbert) Yang</h3>
+                <p>4th-year Computer Science student with interets in Neural Networks, software and system security. Responsible for research cases, website design, content writing, and brain-storming ideas.</p>
+              </div>
+            </div>
+          
+            <hr>
+          
+            <h2>Final Remarks</h2>
+            <p>
+                This website was created as part of our University of Waterloo CS492 Group Project, intended solely for educational purposes and not for further development beyond the course. Our goal is to raise public awareness about the real-world harms of deepfake technology and its impact on everyday life.
+                Our scope is not to provide technical deep-dives or target computer science students—but to speak to the greater public, especially those without a strong background in AI or digital technology. Our focus is on the social implications of deepfake technology. In today’s society, while general literacy continues to rise, technological literacy remains uneven, leaving many people vulnerable to digital manipulation and deception.
+                If this website helps someone with limited technical knowledge better understand the risks of deepfakes and feel confident enough to talk about it or warn others, then we consider that a success.               
+            </p>
+            <p class="center-bold-box">You don’t need to be a tech expert to stay informed. Awareness is your first defense—share it. </p>
+            <hr>
+          
+            <h2>References</h2>
+            <ul class="indented-list">
+              <li>Learning, M. O. (n.d.). Tackling the misinformation epidemic with “in event of Moon disaster.” MIT News | Massachusetts Institute of Technology. https://news.mit.edu/2020/mit-tackles-misinformation-in-event-of-moon-disaster-0720 </li>
+              <li>Incode. (2025, March 5). Top 5 cases of AI deepfake fraud from 2024 exposed: Blog. https://incode.com/blog/top-5-cases-of-ai-deepfake-fraud-from-2024-exposed/ </li>
+              <li>Guardian News and Media. (2024, January 22). Democrats sound alarm over AI robocall to voters mimicking Biden. The Guardian. https://www.theguardian.com/us-news/2024/jan/22/biden-fake-robocalls-new-hampshire </li>
+              <li>Rahman-Jones, I. (2024, January 27). Taylor Swift Deepfakes spark calls in Congress for new legislation. BBC News. https://www.bbc.com/news/technology-68110476 </li>
+              <li>BBC News. (2024, Jan 7). <em>Taylor Swift deepfakes spark calls for new legislation</em> [Video]. YouTube. https://www.youtube.com/watch?v=O_BG4dPZ5A0</li>
+              <li>World Things (2023, January 3). <em>Elon Musk's Deep Fake Video Promoting a Crypto Scam</em> [Video]. YouTube. https://www.youtube.com/watch?v=Xe1_L-a-nSI&t=13s</li>
+              <li>MIT Open Learning (2020, July 19). <em>In Event Of Moon Disaster Movie Trailer [Video]</em> YouTube. https://www.youtube.com/watch?v=kc_ufCSQLwI&t=43s</li>
+            </ul>
+          </section>
+          
     </main>
 
     <footer>
