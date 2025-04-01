@@ -1,5 +1,5 @@
 const express = require('express');
-const multer  = require('multer');
+const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const app = express();
@@ -11,15 +11,16 @@ app.use(express.json());
 // Serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve images from the public/uploads directory
+// Serve images from the uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
-// Configure multer to save files to public/uploads
+
+// Configure multer to save files to uploads directory
 const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, path.join(__dirname, 'public/uploads'));
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, 'public/uploads')); // Save to 'uploads' directory
   },
-  filename: function(req, file, cb) {
+  filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     const ext = path.extname(file.originalname);
     cb(null, file.fieldname + '-' + uniqueSuffix + ext);
