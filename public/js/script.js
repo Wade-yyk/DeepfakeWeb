@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     voteContainer.className = 'button-container';
   
     const button1 = document.createElement('button');
-    button1.textContent = 'Option 1';
+    button1.textContent = 'Real';
     const button2 = document.createElement('button');
-    button2.textContent = 'Option 2';
+    button2.textContent = 'Fake';
   
     const progressBarContainer = document.createElement('div');
     progressBarContainer.className = 'progress-bar-container';
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     const percentageLabel = document.createElement('p');
     percentageLabel.className = 'percentage-label';
-    percentageLabel.textContent = '0% Option 1 / 0% Option 2';
+    percentageLabel.textContent = '0% Real / 0% Fake';
   
     voteContainer.appendChild(button1);
     voteContainer.appendChild(button2);
