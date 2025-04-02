@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData();
         formData.append('image', file);
   
-        // POST image to /upload endpoint
         fetch('/upload', {
           method: 'POST',
           body: formData
@@ -60,17 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(err => console.error('Error loading images:', err));
   }
   
-  // Dynamically create a block for an uploaded image with voting controls
   function addUploadedImage(fileUrl) {
     const container = document.createElement('div');
     container.className = 'uploaded-item';
   
-    // Create image element
     const img = document.createElement('img');
     img.src = fileUrl;
     img.alt = 'Uploaded Image';
   
-    // Create voting controls container
     const voteContainer = document.createElement('div');
     voteContainer.className = 'button-container';
   
@@ -101,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const uploadedImagesContainer = document.getElementById('uploaded-images-container');
     uploadedImagesContainer.appendChild(container);
   
-    // Function to update UI using vote counts
     function updateUI(votes) {
       const total = votes.option1 + votes.option2;
       let percent1 = 0, percent2 = 0;
@@ -110,10 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
         percent2 = (votes.option2 / total) * 100;
       }
       progressBar.style.width = percent1 + '%';
-      percentageLabel.textContent = `${Math.round(percent1)}% Option 1 / ${Math.round(percent2)}% Option 2`;
+      percentageLabel.textContent = `${Math.round(percent1)}% Real / ${Math.round(percent2)}% Fake`;
     }
   
-    // Load initial vote counts from server for this image
     fetch('/votes?imageUrl=' + encodeURIComponent(fileUrl))
       .then(response => response.json())
       .then(votes => {
@@ -121,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(err => console.error('Error loading votes:', err));
   
-    // Function to send a vote to the server
     function sendVote(option) {
       fetch('/vote', {
         method: 'POST',
@@ -135,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(err => console.error('Error sending vote:', err));
     }
   
-    // Bind click events for voting buttons
     button1.addEventListener('click', function() {
       sendVote('option1');
     });
