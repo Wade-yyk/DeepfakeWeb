@@ -208,4 +208,32 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   document.addEventListener('DOMContentLoaded', createFlashcards);
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = '🗑️ Delete';
+  deleteButton.style.backgroundColor = '#e74c3c';
+
+  deleteButton.addEventListener('click', () => {
+    const filename = fileUrl.split('/').pop();
+    fetch('/delete-image', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        container.remove(); 
+      } else {
+        alert('Delete failed: ' + data.error);
+      }
+    })
+    .catch(err => {
+      console.error('Error deleting:', err);
+      alert('Delete request error');
+    });
+  });
+
+  voteContainer.appendChild(deleteButton);
+
   

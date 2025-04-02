@@ -93,6 +93,32 @@ app.post('/vote', (req, res) => {
   res.json(votes[imageUrl]);
 });
 
+app.delete('/delete-image', (req, res) => {
+  const { filename } = req.body;
+
+  if (!filename) {
+    return res.status(400).json({ error: 'Filename is required' });
+  }
+
+  const filePath = path.join(UPLOAD_PATH, filename);
+
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to delete image', details: err.message });
+    }
+
+    const votes = loadVotes();
+    const imageUrl = `/uploads/${filename}`;
+    if (votes[imageUrl]) {
+      delete votes[imageUrl];
+      saveVotes(votes);
+    }
+
+    res.json({ success: true, message: 'Image and vote data deleted.' });
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
